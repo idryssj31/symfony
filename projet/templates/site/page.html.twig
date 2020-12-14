@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SiteController!{% endblock %}
+
+{% block body %}
+
+<section class="offres">
+
+    
+        <offre>
+
+            <center><h1>{{offre.title}}</h1></center>
+
+<br>
+            <img src="{{asset('https://alchimistedelajoie.com/wp-content/uploads/2018/12/business-camera-coffee-1509428-reduit-1080x675.jpg')}}" alt="" />
+<br>
+            <div class="metadata">Ecrit le {{offre.datedecreation | date('d/m/Y')}}</div>
+
+            <div class="metadata">Mise à jour le {{offre.datedemiseajour | date('d/m/Y')}}</div>
+<br>
+            <h3>Description du job:</h3>{{offre.Description}}
+<br>
+            <h3>Ville: </h3><h2>{{offre.ville}} </h2>   
+<br>
+            <h3>Le code Postale: {{offre.codepostal}}</h3>
+<br>
+            <h3>L'adresse du lieux de travaille: </h3><p>{{offre.adresse}} </p> 
+<br>
+            
+    
+            <div class="content">
+                <center><a href="" class="btn btn-primary">Postuler</a></center>        
+            </div>
+<br>
+<br> 
+</section>
+<section class="contrats">
+
+        <contrat>
+
+            
+
+                
+            
+      
+   
+</section>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% form_theme formOffre 'bootstrap_4_layout.html.twig' %}
+
+    <center><h1>Crée une offre d'emplois </h1></center>
+
+    {{ form_start(formOffre) }}
+
+    {{ form_row(formOffre.title, {'attr': {'placeholder':"Titre de l'offre"}}) }}
+    {{ form_row(formOffre.description, {'attr': {'placeholder':"Descriptino de l'offre"}}) }}
+    {{ form_row(formOffre.adresse, {'attr': {'placeholder':"l'adresse"}}) }}
+    {{ form_row(formOffre.codepostal, {'attr': {'placeholder':"le code postal"}}) }}
+    {{ form_row(formOffre.ville, {'attr': {'placeholder':"La ville"}}) }}
+    
+
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+        Enregistrer les modifications
+        {% else %}
+        Ajouter l'offre
+        {% endif %}
+    </button>
+    {{ form_end(formOffre) }}
+
+    {# je comrpend pas pk le code ne fonctione pas ca me mes que les variables  formtype et formcontrat ne sont pas crées sachant que pour moi elles le sont ..
+        {{ form_start(formType) }}
+
+        {{ form_row(formType.tcontrat, {'attr': {'placeholder':"Type de contrat temps plein/temp partiel."}}) }}
+     
+        {{ form_end(formType) }}
+
+        {{ form_start(formContrats) }}
+
+        {{ form_row(formContrats.contrat, {'attr': {'placeholder':"Contrat en CDD/CDI/Free."}}) }}
+        {{ form_row(formContrats.mission, {'attr': {'placeholder':"Type de mission  CDD ou Freelance."}}) }}
+    
+        {{ form_end(formContrats) }} #}
+    
+{% endblock %}

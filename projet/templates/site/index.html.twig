@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SiteController!{% endblock %}
+
+{% block body %}
+
+<section class="offres">
+
+    {% for offre in offres %}
+        <offre>
+
+            <center><h1>{{offre.title}}</h1></center>
+
+<br>
+            <img src="{{asset('https://alchimistedelajoie.com/wp-content/uploads/2018/12/business-camera-coffee-1509428-reduit-1080x675.jpg')}}" alt="" />
+<br>
+            <div class="metadata">Ecrit le {{offre.datedecreation | date('d/m/Y')}}</div>
+
+            <div class="metadata">Mise à jour le {{offre.datedemiseajour | date('d/m/Y')}}</div>
+<br>
+            <h3>Description du job:</h3>{{offre.Description}}
+<br>
+            <h3>Ville: </h3><h2>{{offre.ville}} </h2>  
+             
+<br>
+            <div class="content">
+                <center><a href="{{ path('page', {'id': offre.id}) }}" class="btn btn-primary">acceder a l'offre</a></center>        
+            </div>
+            
+<br>
+<br> 
+    {% endfor %} 
+</section>
+       
+
+
+{% endblock %}
